@@ -1,0 +1,16 @@
+--AVG height of climbers than climb more than 14a
+SELECT a.country, COUNT(DISTINCT a.user_id) AS climbers, AVG(b.height) AS Avarage_height 
+FROM ascent AS a
+INNER JOIN users as b ON a.user_id = b.id
+WHERE a.grade_id > 67 AND b.height >100
+GROUP BY a.country
+ORDER BY climbers DESC
+
+--all climbers
+
+SELECT a.country, COUNT(DISTINCT a.user_id) AS climbers, AVG(b.height) AS Avarage_height 
+FROM ascent AS a
+INNER JOIN users as b ON a.user_id = b.id
+WHERE b.height >100
+GROUP BY a.country
+ORDER BY climbers DESC

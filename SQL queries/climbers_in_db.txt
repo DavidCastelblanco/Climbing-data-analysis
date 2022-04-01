@@ -1,0 +1,16 @@
+--Count of strong climbers(more than 5.14a)
+
+SELECT country, COUNT(DISTINCT user_id) as climbers
+FROM ascent
+WHERE grade_id > 67
+GROUP BY country
+ORDER BY climbers DESC;
+
+
+--Count of all climbers in data base
+
+SELECT country, COUNT(DISTINCT user_id) as climbers
+FROM ascent
+GROUP BY country
+ORDER BY climbers DESC;
+
